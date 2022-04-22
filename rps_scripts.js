@@ -28,15 +28,7 @@ function playerSelection() {
 
 function playRound(computerChoice, playerChoice) {
 
-    if (computerChoice === 'rock' && playerChoice === 'rock') 
-    {
-        return `Draw! Computer chose ${computerChoice} and you chose ${playerChoice}`;
-    }
-    else if (computerChoice === 'paper' && playerChoice === 'paper') 
-    {
-        return `Draw! Computer chose ${computerChoice} and you chose ${playerChoice}`;
-    }
-    else if (computerChoice === 'scissors' && playerChoice === 'scissors') 
+    if (computerChoice === playerChoice ) 
     {
         return `Draw! Computer chose ${computerChoice} and you chose ${playerChoice}`;
     }
@@ -80,13 +72,13 @@ function game() {
         console.log(`Current score is ${playerScore} for player and ${compScore} for computer`);
     }
     if (playerScore > compScore) {
-        console.log(`Congratulations! You won ${playerScore} to ${compScore} `);
+        console.log(`Congratulations! You won ${playerScore} to ${compScore}.\nThanks for playing!`);
     }
     else if (playerScore = compScore) {
-        console.log(`OMG! It's a draw ${playerScore} to ${compScore} `);
+        console.log(`OMG! It's a draw ${playerScore} to ${compScore}.\nThanks for playing! `);
     }
     else {
-        console.log(`Im so sorry, but you lost ${compScore} to ${playerScore}`);
+        console.log(`Im so sorry, but you lost ${compScore} to ${playerScore}.\nThanks for playing!`);
     }
     
     
