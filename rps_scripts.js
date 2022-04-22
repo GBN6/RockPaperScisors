@@ -69,7 +69,7 @@ function game() {
     for (i = 0; i < 5; i++) {
         result = playRound(computerPlay(), playerSelection());
         console.log(result);
-        console.log(`Current score is ${playerScore} for player and ${compScore} for computer`);
+        console.log(`After round number ${i + 1}, score is ${playerScore} for player and ${compScore} for computer`);
     }
     if (playerScore > compScore) {
         console.log(`Congratulations! You won ${playerScore} to ${compScore}.\nThanks for playing!`);
@@ -85,3 +85,4 @@ function game() {
 }
  game();
 
+ alert('Please refresh if u want to play again!');
