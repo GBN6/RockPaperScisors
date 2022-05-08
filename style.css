@@ -1,0 +1,38 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: aliceblue;
+  }
+#containEverything {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+    font-size: 50px;
+    
+}
+
+.pickSelection {
+    flex: auto;
+    border-radius: 15px;
+    border: .2rem solid black;
+    box-shadow:0 0 0.5rem black;
+    min-width: 100px;
+    min-height: 70px;
+    margin: 0px 20px 0px 20px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
