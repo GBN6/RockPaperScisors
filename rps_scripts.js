@@ -2,14 +2,23 @@
 let playerScore = 0;
 let compScore = 0;
 
-const btnsScissors = document.querySelector('.Scissors');
-const btnsRock = document.querySelector('.Rock');
-const btnsPaper = document.querySelector('.Paper');
 const playerChoiceBtn = document.querySelectorAll('.pickSelection');
 const divResult = document.querySelector('.resultOutput');
-const paraScore = document.createElement('p');
+const resultParagraph = document.querySelector('.resultText');
+const paraScore = document.querySelector('.resultScore');
+const newGameButton = document.createElement('button');
+newGameButton.classList.add('newGame', 'btnH');
+newGameButton.textContent = 'Play Again!'
 
 
+// function to get player choice from button clicks
+function getPlayerChoice(e) 
+{
+    playerChoice = e.target.textContent.toLowerCase();
+    playRound(computerPlay(), playerChoice);
+}
+
+// function to roll computer choice
 function computerPlay() {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
     if (computerChoice === 1) {
@@ -21,7 +30,7 @@ function computerPlay() {
     else return 'scissors';
 }
 
-
+// function to play one round 
 function playRound(computerChoice, playerChoice) {
     // computerChoice = computerPlay();
     // playerChoice = playerSelection();
@@ -29,7 +38,6 @@ function playRound(computerChoice, playerChoice) {
     console.log(playerChoice);
     
     // check if tie
-    const resultParagraph = document.querySelector('p');
     if (computerChoice === playerChoice ) 
     {
         playerScore++;
@@ -77,7 +85,7 @@ function playRound(computerChoice, playerChoice) {
         {
             playerScore++;
             resultParagraph.textContent = `You won! Plus one point for player`;
-            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
+            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;    
         }
         else 
         {
@@ -89,30 +97,38 @@ function playRound(computerChoice, playerChoice) {
     divResult.appendChild(paraScore);
 }
 
-// function game() {
+// function to play until someone reaches 5 points
+function game() {
 
-//     for (i = 0; i < 5; i++) {
-//         result = playRound(computerPlay(), playerSelection());
-//         console.log(result);
-//         console.log(`After round number ${i + 1}, score is ${playerScore} for player and ${compScore} for computer`);
-//     }
-//     if (playerScore > compScore) {
-//         console.log(`Congratulations! You won ${playerScore} to ${compScore}.\nThanks for playing!`);
-//     }
-//     else if (playerScore = compScore) {
-//         console.log(`OMG! It's a draw ${playerScore} to ${compScore}.\nThanks for playing! `);
-//     }
-//     else {
-//         console.log(`Im so sorry, but you lost ${compScore} to ${playerScore}.\nThanks for playing!`);
-//     }
-    
-    
-// }
-//  game();
+    if (playerScore === 5 && compScore === 5)
+    {
+        playerChoiceBtn.forEach(button => button.removeEventListener('click', getPlayerChoice));
+        playerChoiceBtn.forEach(button => button.removeEventListener('click', game));
+        resultParagraph.textContent = `It's a TIE! Please play again.`;
+        resultParagraph.style.cssText = ('font-size: 30px; color: orange');
+        divResult.removeChild(paraScore);
+        divResult.appendChild(newGameButton);
+    }  
+    else if (playerScore === 5) {
+        playerChoiceBtn.forEach(button => button.removeEventListener('click', getPlayerChoice));
+        playerChoiceBtn.forEach(button => button.removeEventListener('click', game));
+        resultParagraph.textContent = `Congratulations you WON!`;
+        resultParagraph.style.cssText = ('font-size: 30px; color: green');
+        divResult.removeChild(paraScore);
+        divResult.appendChild(newGameButton);
 
 
-btnsRock.addEventListener('click', () => playRound(computerPlay(), 'rock'));
+    }
+    else if (compScore === 5) {
+        playerChoiceBtn.forEach(button => button.removeEventListener('click', getPlayerChoice));
+        playerChoiceBtn.forEach(button => button.removeEventListener('click', game));
+        resultParagraph.textContent = `The computer has beaten you!`;
+        resultParagraph.style.cssText = ('font-size: 30px; color: red')
+        divResult.removeChild(paraScore);
+        divResult.appendChild(newGameButton);
+    }
 
-btnsPaper.addEventListener('click',  () => playRound(computerPlay(), 'paper'));
-
-btnsScissors.addEventListener('click',  () => playRound(computerPlay(), 'scissors'));
+}
+newGameButton.addEventListener('click', () => location.reload());
+playerChoiceBtn.forEach(button => button.addEventListener('click', getPlayerChoice));
+playerChoiceBtn.forEach(gameButton => gameButton.addEventListener('click', game));

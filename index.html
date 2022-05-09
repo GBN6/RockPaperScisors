@@ -10,15 +10,38 @@
     <div id="containEverything">
         <div class="title">
             <h1>Rock Paper Scissors</h1>
-            <h3>Choose your pick</h3>
+            <!-- <h3>Choose your pick</h3> -->
         </div>
-        <div class="buttonSelection">
-            <button class="pickSelection Rock">Rock</button>
-            <button class="pickSelection Paper">Paper</button>
-            <button class="pickSelection Scissors">Scissors</button>
-        </div>
+        <div class="playBoard">
+            <div class="playerBoard boardDesign">
+                <div class="iconTextPlayer">
+                    <img class="iconPlayer" src="./images/human_icon-removebg-preview.png" width="200" height="200" alt="human icon">
+                    <p class="playerText">Player</p> 
+                </div>
+                <div class="buttonSelection">
+                    <button id="RockP" class="pickSelection btnH">Rock</button>
+                    <button id="PaperP" class="pickSelection btnH">Paper</button>
+                    <button id="ScissorsP" class="pickSelection btnH">Scissors</button>
+                </div>
+            </div>
+            <div class="computerBoard boardDesign">
+                <div class="iconTextComputer">
+                    <img class="iconComputer" src="./images/robot_icon-removebg-preview.png" width="200" height="200" alt="human icon">
+                    <p class="ComputerText">Computer</p> 
+                </div>
+                <div class="buttonSelection">
+                    <button id="rock" class="computerSelection btnH">Rock</button>
+                    <button id="PaperC" class="computerSelection btnH">Paper</button>
+                    <button id="ScissorsC" class="computerSelection btnH">Scissors</button>
+                </div>
+            </div>
+        </div>    
         <div class="resultOutput">
-            <p>This is a test</p>
+            <p class="resultText textResult"></p>
+            <p class="resultScore textResult"></p>
+        </div>
+        <div class="footer">
+            <p>Grzegorz Bandyra 2022</p>
         </div>
     </div>
 </body>
