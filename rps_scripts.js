@@ -6,6 +6,8 @@ const btnsScissors = document.querySelector('.Scissors');
 const btnsRock = document.querySelector('.Rock');
 const btnsPaper = document.querySelector('.Paper');
 const playerChoiceBtn = document.querySelectorAll('.pickSelection');
+const divResult = document.querySelector('.resultOutput');
+const paraScore = document.createElement('p');
 
 
 function computerPlay() {
@@ -33,6 +35,7 @@ function playRound(computerChoice, playerChoice) {
         playerScore++;
         compScore++;
         resultParagraph.textContent = `It's a tie! Both players gain point!`;
+        paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
     }
     // rock beats scissors
     else if (playerChoice === 'rock') 
@@ -41,11 +44,13 @@ function playRound(computerChoice, playerChoice) {
         {
             playerScore++;
             resultParagraph.textContent = `You won! Plus one point for player`;
+            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
         else 
         {
             compScore++;
             resultParagraph.textContent = `You lost! Plus one point for computer`;
+            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }        
     }
     // paper beats rock
@@ -55,11 +60,13 @@ function playRound(computerChoice, playerChoice) {
         {
             playerScore++;
             resultParagraph.textContent = `You won! Plus one point for player`;
+            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
         else 
         {
             compScore++;
             resultParagraph.textContent = `You lost! Plus one point for computer`;
+            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
         
     }
@@ -70,13 +77,16 @@ function playRound(computerChoice, playerChoice) {
         {
             playerScore++;
             resultParagraph.textContent = `You won! Plus one point for player`;
+            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
         else 
         {
             compScore++;
             resultParagraph.textContent = `You lost! Plus one point for computer`;
+            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
     }
+    divResult.appendChild(paraScore);
 }
 
 // function game() {
