@@ -38,7 +38,7 @@ body,html {
 h1 {
     font-family: fantasy;
     font-size: 60px;
-    color: #ecca04;
+    color: #DA0037;
 }
 
 .pickSelection, .computerSelection, .newGame {
@@ -52,7 +52,7 @@ h1 {
     font-weight: bold;
 }
 .computerSelectionChosen {
-    background-color: #ecca04;
+    background-color: #DA0037;
 }
 
 .btnH:hover {

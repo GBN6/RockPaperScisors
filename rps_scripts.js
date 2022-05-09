@@ -25,21 +25,21 @@ function getPlayerChoice(e)
     console.log(playerChoice);
     if (playerChoice === 'rock') 
     {
-        rockSelected.style.backgroundColor = '#ecca04';
+        rockSelected.style.backgroundColor = '#DA0037';
         paperSelected.style.backgroundColor = 'white'
         scissorsSelected.style.backgroundColor = 'white'
     }
     else if (playerChoice === 'paper')
     {
         rockSelected.style.backgroundColor = 'white';
-        paperSelected.style.backgroundColor = '#ecca04'
+        paperSelected.style.backgroundColor = '#DA0037'
         scissorsSelected.style.backgroundColor = 'white'
     }
     else if (playerChoice === 'scissors')
     {
         rockSelected.style.backgroundColor = 'white';
         paperSelected.style.backgroundColor = 'white'
-        scissorsSelected.style.backgroundColor = '#ecca04'
+        scissorsSelected.style.backgroundColor = '#DA0037'
     }
     playRound(computerPlay(), playerChoice);
 }
