@@ -27,8 +27,8 @@ h1 {
 .pickSelection {
     flex: auto;
     border-radius: 15px;
-    border: .2rem solid black;
-    box-shadow:0 0 0.5rem black;
+    border: .15rem solid black;
+    box-shadow:0 0 0.5rem  black;
     min-width: 100px;
     min-height: 70px;
     margin: 0px 20px 0px 20px;
