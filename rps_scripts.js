@@ -10,24 +10,65 @@ const newGameButton = document.createElement('button');
 newGameButton.classList.add('newGame', 'btnH');
 newGameButton.textContent = 'Play Again!'
 
+const rockSelected = document.querySelector('#RockP');
+const paperSelected = document.querySelector('#PaperP');
+const scissorsSelected = document.querySelector('#ScissorsP');
+
+const rockSelectedComp = document.querySelector('#RockC');
+const paperSelectedComp = document.querySelector('#PaperC');
+const scissorsSelectedComp = document.querySelector('#ScissorsC');
 
 // function to get player choice from button clicks
 function getPlayerChoice(e) 
 {
     playerChoice = e.target.textContent.toLowerCase();
+    console.log(playerChoice);
+    if (playerChoice === 'rock') 
+    {
+        rockSelected.style.backgroundColor = '#ecca04';
+        paperSelected.style.backgroundColor = 'white'
+        scissorsSelected.style.backgroundColor = 'white'
+    }
+    else if (playerChoice === 'paper')
+    {
+        rockSelected.style.backgroundColor = 'white';
+        paperSelected.style.backgroundColor = '#ecca04'
+        scissorsSelected.style.backgroundColor = 'white'
+    }
+    else if (playerChoice === 'scissors')
+    {
+        rockSelected.style.backgroundColor = 'white';
+        paperSelected.style.backgroundColor = 'white'
+        scissorsSelected.style.backgroundColor = '#ecca04'
+    }
     playRound(computerPlay(), playerChoice);
 }
+
 
 // function to roll computer choice
 function computerPlay() {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
-    if (computerChoice === 1) {
+    if (computerChoice === 1) 
+    {
+        rockSelectedComp.style.backgroundColor = '#ecca04';
+        paperSelectedComp.style.backgroundColor = 'white'
+        scissorsSelectedComp.style.backgroundColor = 'white'
         return 'rock';
     }
-    else if (computerChoice === 2) {
+    else if (computerChoice === 2) 
+    {
+        rockSelectedComp.style.backgroundColor = 'white';
+        paperSelectedComp.style.backgroundColor = '#ecca04'
+        scissorsSelectedComp.style.backgroundColor = 'white'
         return 'paper';
     }
-    else return 'scissors';
+    else 
+    {
+        rockSelectedComp.style.backgroundColor = 'white';
+        paperSelectedComp.style.backgroundColor = 'white'
+        scissorsSelectedComp.style.backgroundColor = '#ecca04'
+        return 'scissors';
+    } 
 }
 
 // function to play one round 
@@ -132,3 +173,4 @@ function game() {
 newGameButton.addEventListener('click', () => location.reload());
 playerChoiceBtn.forEach(button => button.addEventListener('click', getPlayerChoice));
 playerChoiceBtn.forEach(gameButton => gameButton.addEventListener('click', game));
+// playerChoiceBtn.forEach(computerTransform => computerTransform.addEventListener('click', computerChange));
