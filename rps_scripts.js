@@ -180,4 +180,3 @@ function game() {
 newGameButton.addEventListener('click', () => location.reload());
 playerChoiceBtn.forEach(button => button.addEventListener('click', getPlayerChoice));
 playerChoiceBtn.forEach(gameButton => gameButton.addEventListener('click', game));
-
