@@ -1,7 +1,7 @@
 # RockPaperScisors
-This will be a simple prompt rock paper scissors game
+This is a simple rock, paper scissors game.
 
 ##
 Testing my basic JavaScript skills
-User will be asked to input choice
-Opponent will be a computer.
+Add GUI and rewrote some functions
+Basic usage of event listeners and DOM manipulation.
