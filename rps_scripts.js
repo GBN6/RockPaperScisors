@@ -83,8 +83,9 @@ function playRound(computerChoice, playerChoice) {
     {
         playerScore++;
         compScore++;
-        resultParagraph.textContent = `It's a tie! Both players gain point!`;
-        paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
+        document.querySelector('.playerText').textContent = `Player: ${playerScore}`;
+        document.querySelector('.ComputerText').textContent = `Computer: ${compScore}`;
+        resultParagraph.textContent = `It's a tie! Both players gain point!`
     }
     // rock beats scissors
     else if (playerChoice === 'rock') 
@@ -92,14 +93,16 @@ function playRound(computerChoice, playerChoice) {
         if (computerChoice === 'scissors')
         {
             playerScore++;
+            document.querySelector('.playerText').textContent = `Player: ${playerScore}`;
+            document.querySelector('.ComputerText').textContent = `Computer: ${compScore}`;
             resultParagraph.textContent = `You won! Plus one point for player`;
-            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
         else 
         {
             compScore++;
+            document.querySelector('.playerText').textContent = `Player: ${playerScore}`;
+            document.querySelector('.ComputerText').textContent = `Computer: ${compScore}`;
             resultParagraph.textContent = `You lost! Plus one point for computer`;
-            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }        
     }
     // paper beats rock
@@ -108,14 +111,16 @@ function playRound(computerChoice, playerChoice) {
         if (computerChoice === 'rock')
         {
             playerScore++;
+            document.querySelector('.playerText').textContent = `Player: ${playerScore}`;
+            document.querySelector('.ComputerText').textContent = `Computer: ${compScore}`;
             resultParagraph.textContent = `You won! Plus one point for player`;
-            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
         else 
         {
             compScore++;
+            document.querySelector('.playerText').textContent = `Player: ${playerScore}`;
+            document.querySelector('.ComputerText').textContent = `Computer: ${compScore}`;
             resultParagraph.textContent = `You lost! Plus one point for computer`;
-            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
         }
         
     }
@@ -125,14 +130,16 @@ function playRound(computerChoice, playerChoice) {
         if (computerChoice === 'paper')
         {
             playerScore++;
-            resultParagraph.textContent = `You won! Plus one point for player`;
-            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;    
+            document.querySelector('.playerText').textContent = `Player: ${playerScore}`;
+            document.querySelector('.ComputerText').textContent = `Computer: ${compScore}`;
+            resultParagraph.textContent = `You won! Plus one point for player`;    
         }
         else 
         {
             compScore++;
             resultParagraph.textContent = `You lost! Plus one point for computer`;
-            paraScore.textContent = `Player Score: ${playerScore}, Computer Score: ${compScore}`;
+            document.querySelector('.playerText').textContent = `Player: ${playerScore}`;
+            document.querySelector('.ComputerText').textContent = `Computer: ${compScore}`;
         }
     }
     divResult.appendChild(paraScore);
