@@ -1,7 +1,10 @@
 # RockPaperScisors
 This is a simple rock, paper scissors game.
 
+## Live version
+https://gbn6.github.io/RockPaperScisors/
+
 ##
-Testing my basic JavaScript skills
-Add GUI and rewrote some functions
-Basic usage of event listeners and DOM manipulation.
+Built with HTML, CSS, JavaScript
+Added GUI
+Play with computer to 5 points, then reset!
